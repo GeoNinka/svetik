@@ -2,7 +2,7 @@ export const useGameStore = defineStore('gameStore', {
     state: () => ({
         questionIndex: 1,
         chapterIndex: 0,
-        lineIndex: 56,
+        lineIndex: 0,
         isMonitorOpen: false,
         chapters: [
             [

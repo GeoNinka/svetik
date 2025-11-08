@@ -384,6 +384,9 @@ export const useGameStore = defineStore('gameStore', {
                 localStorage.setItem('isMonitorOpen', false)
                 localStorage.setItem('chapterIndex', 1)
                 localStorage.setItem('lineIndex', 0)
+            } else if (this.chapterIndex == 1) {
+                const router = useRouter()
+                router.push('/')
             }
         }
     }

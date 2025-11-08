@@ -4,12 +4,24 @@
         <img class="img" src="/images/sveta.png" alt="">
         <NuxtLink to="/game" v-if="gameStore.chapterIndex != 0 || gameStore.lineIndex != 0" class="button">Продолжить</NuxtLink>
         <NuxtLink to="/game" v-if="gameStore.chapterIndex == 0 && gameStore.lineIndex == 0" class="button">Новая игра</NuxtLink>
-        <button class="button" v-if="gameStore.chapterIndex != 0 || gameStore.lineIndex != 0">Сбросить прогресс</button>
+        <button @click="resetProgress" class="button" v-if="gameStore.chapterIndex != 0 || gameStore.lineIndex != 0">Сбросить прогресс</button>
     </div>
 </template>
 
 <script setup>
     const gameStore = useGameStore()
+
+    function resetProgress() {
+        localStorage.removeItem('questionIndex')
+        localStorage.removeItem('chapterIndex')
+        localStorage.removeItem('lineIndex')
+        localStorage.removeItem('isMonitorOpen')
+        gameStore.questionIndex = 1
+        gameStore.chapterIndex = 0
+        gameStore.lineIndex = 0
+        gameStore.isMonitorOpen = false
+
+    }
 </script>
 
 <style scoped>

@@ -17,7 +17,7 @@
             <button @click="clueHandler" class="button">?</button>
             <div v-if="isClueActive" class="clue">
                 <img src="/images/clue.png" class="img" alt="">
-                <p class="text text--clue">ROT CIPHER 28</p>
+                <p class="text text--clue">Цезарь ROT</p>
             </div>
         </div>
     </div>

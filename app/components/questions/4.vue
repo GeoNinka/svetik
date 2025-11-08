@@ -1,9 +1,12 @@
 <template>
     <div class="question__wrapper">
         <div class="question">
-            <a href="https://www.restoclub.ru/uploads/menufile/1/1/2/6/11267d72586645389db860549139ee57.jpeg" target="_blank" class="text">
-                (перловая каша * 2 - (апельсиновый фреш + (кейпопс / 10))) * (эклер / 125) + (круасан с лососем / 2) + (тарт миндальный / (мармелад манго - 10)) + (латте / (макарун/10)<sup>1/2</sup>)
-            </a>
+            <div class="qr__wrapper">
+                <img src="/images/qr1.jpg" class="qr qr--1" alt="">
+                <img src="/images/qr2.jpg" class="qr qr--2" alt="">
+                <img src="/images/qr3.jpg" class="qr qr--3" alt="">
+                <img src="/images/qr4.jpg" class="qr qr--4" alt="">
+            </div>
         </div>
         <div class="input__wrapper">
             <input v-model="answer" class="input" type="text" name="" id="">
@@ -11,7 +14,7 @@
             <button @click="clueHandler" class="button">?</button>
             <div v-if="isClueActive" class="clue">
                 <img src="/images/clue.png" class="img" alt="">
-                <p class="text text--clue">Ходить в Антипу мы не бросим</p>
+                <p class="text text--clue">Измени размер окна, never gonna let you down</p>
             </div>
         </div>
     </div>
@@ -28,7 +31,7 @@
     }
 
     function answerHandler() {
-        if (answer.value.toLowerCase() == '1488') {
+        if (answer.value.toLowerCase() == 'never gonna give you up') {
             gameStore.questionIndex += 1
             localStorage.setItem('questionIndex', gameStore.questionIndex)
         }
@@ -45,9 +48,37 @@
         margin: 0 auto;
     }
 
-    .highlight {
-        color: red;
-        text-shadow: 0px 0px 3px red;
+    .qr__wrapper {
+        position: relative;
+        height: 70vh;
+        min-width: 400px;
+        min-height: 400px;
+    }
+
+    .qr {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+    }
+
+    .qr--1 {
+        top: 0;
+        left: 0;
+    }
+
+    .qr--2 {
+        top: 0;
+        right: 0;
+    }
+
+    .qr--3 {
+        bottom: 0;
+        left: 0;
+    }
+
+    .qr--4 {
+        bottom: 0;
+        right: 0;
     }
 
     .img {

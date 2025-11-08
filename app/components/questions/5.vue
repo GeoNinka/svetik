@@ -1,9 +1,9 @@
 <template>
     <div class="question__wrapper">
         <div class="question">
-            <a href="https://www.restoclub.ru/uploads/menufile/1/1/2/6/11267d72586645389db860549139ee57.jpeg" target="_blank" class="text">
-                (перловая каша * 2 - (апельсиновый фреш + (кейпопс / 10))) * (эклер / 125) + (круасан с лососем / 2) + (тарт миндальный / (мармелад манго - 10)) + (латте / (макарун/10)<sup>1/2</sup>)
-            </a>
+            <p class="text">
+            Как называется редкий вид женского интимного пирсинга, при котором прокол делается с внутренней части влагалища в сторону анального отверстия. 
+            </p>
         </div>
         <div class="input__wrapper">
             <input v-model="answer" class="input" type="text" name="" id="">
@@ -11,7 +11,7 @@
             <button @click="clueHandler" class="button">?</button>
             <div v-if="isClueActive" class="clue">
                 <img src="/images/clue.png" class="img" alt="">
-                <p class="text text--clue">Ходить в Антипу мы не бросим</p>
+                <p class="text text--clue">По статистике треть людей голосуют за него</p>
             </div>
         </div>
     </div>
@@ -28,7 +28,7 @@
     }
 
     function answerHandler() {
-        if (answer.value.toLowerCase() == '1488') {
+        if (answer.value.toLowerCase() == 'фуршет') {
             gameStore.questionIndex += 1
             localStorage.setItem('questionIndex', gameStore.questionIndex)
         }
@@ -43,11 +43,6 @@
         height: 90vh;
         width: 90%;
         margin: 0 auto;
-    }
-
-    .highlight {
-        color: red;
-        text-shadow: 0px 0px 3px red;
     }
 
     .img {

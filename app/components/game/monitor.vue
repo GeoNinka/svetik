@@ -1,14 +1,14 @@
 <template>
     <div class="monitor">
-        <p>{{ gameStore.questionIndex }} / 10</p>
+        <p>{{ gameStore.questionIndex }} / 8</p>
         <Questions1 v-if="gameStore.questionIndex == 1"></Questions1>
         <Questions2 v-if="gameStore.questionIndex == 2"></Questions2>
         <Questions3 v-if="gameStore.questionIndex == 3"></Questions3>
-        <!-- <Questions4 v-if="gameStore.questionIndex == 4"></Questions4> -->
-        <!-- <Questions5 v-if="gameStore.questionIndex == 5"></Questions5> -->
-        <!-- <Questions6 v-if="gameStore.questionIndex == 6"></Questions6> -->
-        <!-- <Questions7 v-if="gameStore.questionIndex == 7"></Questions7> -->
-        <!-- <Questions8 v-if="gameStore.questionIndex == 8"></Questions8> -->
+        <Questions4 v-if="gameStore.questionIndex == 4"></Questions4>
+        <Questions5 v-if="gameStore.questionIndex == 5"></Questions5>
+        <Questions6 v-if="gameStore.questionIndex == 6"></Questions6>
+        <Questions7 v-if="gameStore.questionIndex == 7"></Questions7>
+        <Questions8 v-if="gameStore.questionIndex == 8"></Questions8>
     </div>
 </template>
 

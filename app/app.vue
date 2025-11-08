@@ -9,21 +9,21 @@
 <script setup>
     const gameStore = useGameStore()
 
-    // callOnce(() => {
-    //     if (localStorage.getItem('questionIndex') != null) {
-    //         gameStore.questionIndex = parseInt(localStorage.getItem('questionIndex'))
-    //     }
-    //     if (localStorage.getItem('chapterIndex') != null) {
-    //         gameStore.chapterIndex = parseInt(localStorage.getItem('chapterIndex'))
-    //     }
-    //     if (localStorage.getItem('lineIndex') != null) {
-    //         gameStore.lineIndex = parseInt(localStorage.getItem('lineIndex'))
-    //     }
-    //     if (localStorage.getItem('isMonitorOpen') != null) {
-    //         gameStore.isMonitorOpen = localStorage.getItem('isMonitorOpen') === 'true'
+    callOnce(() => {
+        if (localStorage.getItem('questionIndex') != null) {
+            gameStore.questionIndex = parseInt(localStorage.getItem('questionIndex'))
+        }
+        if (localStorage.getItem('chapterIndex') != null) {
+            gameStore.chapterIndex = parseInt(localStorage.getItem('chapterIndex'))
+        }
+        if (localStorage.getItem('lineIndex') != null) {
+            gameStore.lineIndex = parseInt(localStorage.getItem('lineIndex'))
+        }
+        if (localStorage.getItem('isMonitorOpen') != null) {
+            gameStore.isMonitorOpen = localStorage.getItem('isMonitorOpen') === 'true'
             
-    //     }
-    // })
+        }
+    })
 </script>
 
 <style>

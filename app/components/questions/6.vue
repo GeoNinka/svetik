@@ -1,9 +1,8 @@
 <template>
     <div class="question__wrapper">
         <div class="question">
-            <a href="https://www.restoclub.ru/uploads/menufile/1/1/2/6/11267d72586645389db860549139ee57.jpeg" target="_blank" class="text">
-                (перловая каша * 2 - (апельсиновый фреш + (кейпопс / 10))) * (эклер / 125) + (круасан с лососем / 2) + (тарт миндальный / (мармелад манго - 10)) + (латте / (макарун/10)<sup>1/2</sup>)
-            </a>
+            <p class="text">Состав:</p>
+            <p class="text">Филе цыплят-бройлеров, шпик, мясо цыплят-бройлеров механической обвалки, лактоза, молоко сухое обезжиренное, молочный белок, сольпищевая йодированная, брусника сушеная, декстроза, белок свиной животный, вкусоароматический препарат, дрожжевой экстракт, чесноксушеный, перец черный, экстракты специй, растительный концентрат, антиокислитель – аскорбат натрия, гемоглобин свиной, краситель –кармины, стартовые культуры, фиксатор окраски – нитрит натрия. Могут присутствовать следы яиц, сои, глютена, сельдерея, горчицы илиследы продуктов их переработки. Дату изготовления и срок годности смотрите на этикетке изделия, срок годности указан с датыупаковки.</p>
         </div>
         <div class="input__wrapper">
             <input v-model="answer" class="input" type="text" name="" id="">
@@ -11,7 +10,7 @@
             <button @click="clueHandler" class="button">?</button>
             <div v-if="isClueActive" class="clue">
                 <img src="/images/clue.png" class="img" alt="">
-                <p class="text text--clue">Ходить в Антипу мы не бросим</p>
+                <p class="text text--clue">Белорусская традиция</p>
             </div>
         </div>
     </div>
@@ -28,7 +27,7 @@
     }
 
     function answerHandler() {
-        if (answer.value.toLowerCase() == '1488') {
+        if (answer.value.toLowerCase() == 'брусниковка') {
             gameStore.questionIndex += 1
             localStorage.setItem('questionIndex', gameStore.questionIndex)
         }
@@ -43,11 +42,6 @@
         height: 90vh;
         width: 90%;
         margin: 0 auto;
-    }
-
-    .highlight {
-        color: red;
-        text-shadow: 0px 0px 3px red;
     }
 
     .img {

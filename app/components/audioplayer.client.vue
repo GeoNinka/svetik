@@ -13,7 +13,6 @@
     const isPlay = ref(false)
     onMounted(async () => {
         await nextTick()
-
         if (audio.value) {
             audio.value.volume = 0.1
             isPlay.value = true

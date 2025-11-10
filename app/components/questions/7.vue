@@ -1,17 +1,6 @@
 <template>
     <div class="question__wrapper">
         <div class="question">
-            <!-- ОТВЕТ -->
-            <!-- 1 -->
-            <!-- 2 -->
-            <!-- 3 -->
-            <!-- 4 -->
-            <!-- 5 -->
-            <!-- 6 -->
-            <!-- 7 -->
-            <!-- 8 -->
-            <!-- 9 -->
-            <!-- ОТВЕТ -->
             <p class="text">CTRL + SHIFT + I или f12 или Cmd + Option + I</p>
             <p class="text">Elements</p>
             <p class="text">Ищи</p>
@@ -22,7 +11,7 @@
             <button @click="clueHandler" class="button">?</button>
             <div v-if="isClueActive" class="clue">
                 <img src="/images/clue.png" class="img" alt="">
-                <p class="text text--clue">#__nuxt > div > div > div.screen > div.wrapper > div.monitor > div.monitor > div.question__wrapper > div.question</p>
+                <p class="text text--clue">console</p>
             </div>
         </div>
     </div>
@@ -30,7 +19,7 @@
 
 <script setup>
     const gameStore = useGameStore()
-
+    console.log('Ответ: тарелочки')
     const isClueActive = ref(false)
     const answer = ref('')
 
@@ -39,7 +28,7 @@
     }
 
     function answerHandler() {
-        if (answer.value.toLowerCase() == '123456789') {
+        if (answer.value.toLowerCase() == 'тарелочки') {
             gameStore.questionIndex += 1
             localStorage.setItem('questionIndex', gameStore.questionIndex)
         }
